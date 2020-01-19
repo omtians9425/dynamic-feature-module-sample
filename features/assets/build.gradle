@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+//apply plugin: 'com.android.library'
+// then change to:
+apply plugin: 'com.android.dynamic-feature'
 
 android {
 
@@ -22,5 +24,9 @@ android {
     defaultConfig {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
+    }
+
+    dependencies {
+        implementation project(':app')
     }
 }
