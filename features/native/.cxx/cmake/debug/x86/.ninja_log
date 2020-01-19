@@ -1,3 +1,3 @@
 # ninja log v5
-0	101	0	CMakeFiles/hello-jni.dir/hello-jni.c.o	1307605c28b9a409
-101	179	0	/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/obj/x86/libhello-jni.so	4bb0816e9af4cfb4
+0	188	0	CMakeFiles/hello-jni.dir/hello-jni.c.o	1307605c28b9a409
+189	256	0	/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/obj/x86/libhello-jni.so	4bb0816e9af4cfb4
