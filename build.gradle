@@ -27,7 +27,7 @@ buildscript {
     ]
 
     ext.names = [
-            'applicationId': 'com.google.android.samples.dynamicfeatures.ondemand'
+            'applicationId': 'com.omtians9425.android.samples.dynamicfeatures.ondemand'
     ]
 
     repositories {
