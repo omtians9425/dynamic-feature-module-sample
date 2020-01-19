@@ -1,0 +1,2 @@
+[1/2] Building C object CMakeFiles/hello-jni.dir/hello-jni.c.o
+[2/2] Linking C shared library /Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/obj/x86_64/libhello-jni.so

@@ -1,0 +1,3 @@
+# ninja log v5
+0	67	0	CMakeFiles/hello-jni.dir/hello-jni.c.o	86f7ff6086fe803d
+67	139	0	/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/obj/x86_64/libhello-jni.so	d2fa379a440d6bff

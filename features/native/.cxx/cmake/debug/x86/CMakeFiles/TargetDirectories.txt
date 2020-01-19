@@ -1,0 +1,3 @@
+/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
+/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
+/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/x86/CMakeFiles/hello-jni.dir

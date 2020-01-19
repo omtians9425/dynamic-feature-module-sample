@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start",
+      "sdkFolder": "/Users/rskow/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates",
+      "gradleModulePathName": ":native",
+      "moduleRootFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native",
+      "makeFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/src/main/cpp/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/.cxx",
+      "cxxFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx",
+      "ndkFolder": "/Users/rskow/Library/Android/sdk/ndk-bundle",
+      "ndkVersion": "21.0.6113669",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      "-std\u003dc++11"
+    ],
+    "variantName": "debug",
+    "soFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/lib",
+    "objFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a",
+  "jsonFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a",
+  "objFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/obj/armeabi-v7a",
+  "buildCommandFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a/build_command.txt",
+  "buildOutputFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a/build_output.txt",
+  "modelOutputFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a/build_generation_state.json",
+    "cacheKeyFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug/armeabi-v7a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a/compile_commands.json"
+}

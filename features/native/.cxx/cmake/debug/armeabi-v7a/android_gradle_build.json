@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/src/main/cpp/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/Users/rskow/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a --target clean"
+	],
+	"libraries" : 
+	{
+		"hello-jni-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "hello-jni",
+			"buildCommand" : "/Users/rskow/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a --target hello-jni",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi16 --gcc-toolchain=/Users/rskow/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/rskow/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dhello_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/src/main/cpp/hello-jni.c",
+					"workingDirectory" : "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates/cmake/debug/obj/armeabi-v7a/libhello-jni.so",
+			"toolchain" : "9840998792538795964"
+		}
+	},
+	"toolchains" : 
+	{
+		"9840998792538795964" : 
+		{
+			"cCompilerExecutable" : "/Users/rskow/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/rskow/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}
