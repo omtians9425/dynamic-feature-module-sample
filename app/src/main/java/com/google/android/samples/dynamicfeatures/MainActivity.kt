@@ -63,6 +63,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val moduleAssets by lazy { getString(R.string.module_assets) }
+    private val moduleKotlin by lazy { getString(R.string.module_feature_kotlin) }
+    private val moduleJava by lazy { getString(R.string.module_feature_java) }
+    private val moduleNative by lazy { getString(R.string.module_native) }
 
     /** Display assets loaded from the assets feature module. */
     private fun displayAssets() {
