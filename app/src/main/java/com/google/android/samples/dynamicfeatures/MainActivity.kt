@@ -123,6 +123,21 @@ class MainActivity : AppCompatActivity() {
     private fun setClickListener(id: Int, listener: View.OnClickListener) {
         findViewById<View>(id).setOnClickListener(listener)
     }
+
+    private fun updateProgressMessage(message: String) {
+        if (progress.visibility != View.VISIBLE) displayProgress()
+        progressText.text = message
+    }
+
+    private fun displayProgress() {
+        progress.visibility = View.VISIBLE
+        buttons.visibility = View.GONE
+    }
+
+    private fun displayButtons() {
+        progress.visibility = View.GONE
+        buttons.visibility = View.VISIBLE
+    }
 }
 
 fun MainActivity.toastAndLog(text: String) {
