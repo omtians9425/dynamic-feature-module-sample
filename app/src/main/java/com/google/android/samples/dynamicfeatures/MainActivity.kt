@@ -66,7 +66,9 @@ class MainActivity : AppCompatActivity() {
 
     /** Display assets loaded from the assets feature module. */
     private fun displayAssets() {
+        updateProgressMessage("Loading module $moduleAssets")
         if (manager.installedModules.contains(moduleAssets)) {
+            updateProgressMessage("Already installed")
             // Get the asset manager with a refreshed context, to access content of newly installed apk.
             val assetManager = createPackageContext(packageName, 0).assets
             // Now treat it like any other asset file.
@@ -81,16 +83,22 @@ class MainActivity : AppCompatActivity() {
                     .setMessage(assetContent)
                     .show()
         } else {
-            toastAndLog("The assets module is not installed")
+            updateProgressMessage("Starting install for $moduleAssets")
 
             val request = SplitInstallRequest.newBuilder()
                     .addModule(moduleAssets)
                     .build()
             manager.startInstall(request)
-                    .addOnCompleteListener { toastAndLog("module $moduleAssets installed.") }
-                    .addOnSuccessListener { toastAndLog("loading $moduleAssets") }
-                    .addOnFailureListener { toastAndLog("failure loading $moduleAssets") }
-
+                    .addOnCompleteListener {
+                        displayAssets()
+                    }
+                    .addOnSuccessListener {
+                        toastAndLog("loading $moduleAssets")
+                    }
+                    .addOnFailureListener {
+                        toastAndLog("Error loading $moduleAssets")
+                        displayButtons()
+                    }
         }
     }
 
