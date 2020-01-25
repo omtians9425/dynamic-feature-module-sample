@@ -26,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.play.core.splitinstall.SplitInstallHelper
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+import com.google.android.play.core.splitinstall.SplitInstallRequest
 
 private const val packageName = "com.google.android.samples.dynamicfeatures.ondemand"
 private const val kotlinSampleClassname = "$packageName.KotlinSampleActivity"
@@ -75,6 +76,15 @@ class MainActivity : AppCompatActivity() {
                     .show()
         } else {
             toastAndLog("The assets module is not installed")
+
+            val request = SplitInstallRequest.newBuilder()
+                    .addModule(moduleAssets)
+                    .build()
+            manager.startInstall(request)
+                    .addOnCompleteListener { toastAndLog("module $moduleAssets installed.") }
+                    .addOnSuccessListener { toastAndLog("loading $moduleAssets") }
+                    .addOnFailureListener { toastAndLog("failure loading $moduleAssets") }
+
         }
     }
 
