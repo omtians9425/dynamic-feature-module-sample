@@ -20,10 +20,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.play.core.splitinstall.SplitInstallHelper
+import androidx.constraintlayout.widget.Group
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
@@ -36,6 +38,10 @@ private const val nativeSampleClassname = "$packageName.NativeSampleActivity"
 /** Activity that displays buttons and handles loading of feature modules. */
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var progress: Group
+    private lateinit var buttons: Group
+    private lateinit var progressBar: ProgressBar
+    private lateinit var progressText: TextView
     private lateinit var manager: SplitInstallManager
 
     private val clickListener by lazy {
@@ -98,6 +104,10 @@ class MainActivity : AppCompatActivity() {
 
     /** Set up all view variables. */
     private fun initializeViews() {
+        buttons = findViewById(R.id.buttons)
+        progress = findViewById(R.id.progress)
+        progressBar = findViewById(R.id.progress_bar)
+        progressText = findViewById(R.id.progress_text)
         setupClickListener()
     }
 
