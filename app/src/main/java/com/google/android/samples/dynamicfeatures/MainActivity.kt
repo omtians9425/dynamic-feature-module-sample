@@ -50,6 +50,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_load_java -> loadAndLaunchModule(moduleJava)
                 R.id.btn_load_native -> loadAndLaunchModule(moduleNative)
                 R.id.btn_load_assets -> loadAndLaunchModule(moduleAssets)
+                R.id.btn_install_all_now -> installAllFeaturesNow()
+                R.id.btn_install_all_deferred -> installAllFeaturesDeferred()
+                R.id.btn_request_uninstall -> requestUninstall()
             }
         }
     }
@@ -133,6 +136,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun requestUninstall() {
+        toastAndLog("Requesting uninstall of all modules." +
+                "This will happen at some point in the future.")
+        val modules = listOf(moduleAssets, moduleJava, moduleKotlin, moduleNative)
+        val installedModules = manager.installedModules
+        manager.deferredUninstall(modules).addOnSuccessListener {
+            toastAndLog("Uninstalling $installedModules")
+        }
+    }
+
     private val moduleAssets by lazy { getString(R.string.module_assets) }
     private val moduleKotlin by lazy { getString(R.string.module_feature_kotlin) }
     private val moduleJava by lazy { getString(R.string.module_feature_java) }
@@ -212,11 +225,13 @@ class MainActivity : AppCompatActivity() {
 
     /** Set all click listeners required for the buttons on the UI. */
     private fun setupClickListener() {
-
         setClickListener(R.id.btn_load_kotlin, clickListener)
         setClickListener(R.id.btn_load_java, clickListener)
         setClickListener(R.id.btn_load_assets, clickListener)
         setClickListener(R.id.btn_load_native, clickListener)
+        setClickListener(R.id.btn_install_all_now, clickListener)
+        setClickListener(R.id.btn_install_all_deferred, clickListener)
+        setClickListener(R.id.btn_request_uninstall, clickListener)
     }
 
     private fun setClickListener(id: Int, listener: View.OnClickListener) {
