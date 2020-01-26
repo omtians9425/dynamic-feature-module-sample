@@ -15,7 +15,7 @@
  */
 
 //apply plugin: 'com.android.library'
-apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'com.android.dynamic-feature' // Updated line
 apply plugin: 'kotlin-android'
 
 android {

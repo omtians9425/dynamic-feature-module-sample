@@ -18,15 +18,17 @@ package com.google.android.samples.dynamicfeatures.ondemand
 
 import android.os.Bundle
 import android.widget.TextView
+import com.google.android.play.core.splitinstall.SplitInstallHelper
 import com.google.android.samples.dynamicfeatures.ondemand.ccode.R
-import androidx.appcompat.app.AppCompatActivity
+import com.google.android.samples.dynamicfeatures.BaseSplitActivity
 
 /** A simple activity displaying some text coming through via JNI. */
-class NativeSampleActivity : AppCompatActivity() {
+class NativeSampleActivity : BaseSplitActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        System.loadLibrary("hello-jni")
+//        System.loadLibrary("hello-jni") // old one
+        SplitInstallHelper.loadLibrary(this, "hello-jni")
 
         setContentView(R.layout.activity_hello_jni)
         findViewById<TextView>(R.id.hello_textview).text = stringFromJNI()

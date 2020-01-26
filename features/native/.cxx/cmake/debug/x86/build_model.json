@@ -5,6 +5,7 @@
       "sdkFolder": "/Users/rskow/Library/Android/sdk",
       "isNativeCompilerSettingsCacheEnabled": false,
       "isBuildOnlyTargetAbiEnabled": true,
+      "ideBuildTargetAbi": "x86",
       "splitsAbiFilterSet": [],
       "intermediatesFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/build/intermediates",
       "gradleModulePathName": ":native",
@@ -41,10 +42,7 @@
     "gradleBuildOutputFolder": "/Users/rskow/StudioProjects/learning/android-dynamic-features-codelab_start/features/native/.cxx/cxx/debug",
     "isDebuggableEnabled": true,
     "validAbiList": [
-      "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
+      "X86"
     ],
     "buildTargetSet": []
   },
