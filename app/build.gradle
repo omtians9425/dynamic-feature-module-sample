@@ -57,6 +57,10 @@ dependencies {
     // Libraries which can be re-used in other modules should use the `api` keyword.
     // This way they can be shared with dependent feature modules.
 
+    /*
+     "implementation" is only directly reference.
+     "api" enables multi-layer reference.
+     */
     implementation "androidx.annotation:annotation:1.1.0"
     implementation "androidx.appcompat:appcompat:1.1.0"
     implementation "androidx.constraintlayout:constraintlayout:1.1.3"
