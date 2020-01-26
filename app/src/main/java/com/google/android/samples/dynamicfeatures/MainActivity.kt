@@ -124,6 +124,15 @@ class MainActivity : AppCompatActivity() {
                 }
     }
 
+    private fun installAllFeaturesDeferred() {
+        val modules = listOf(moduleAssets, moduleJava, moduleKotlin, moduleNative)
+        manager.deferredInstall(modules).addOnSuccessListener {
+            toastAndLog("Deferred installation of $modules")
+        }.addOnFailureListener {
+            toastAndLog("Failed installation of $modules")
+        }
+    }
+
     private val moduleAssets by lazy { getString(R.string.module_assets) }
     private val moduleKotlin by lazy { getString(R.string.module_feature_kotlin) }
     private val moduleJava by lazy { getString(R.string.module_feature_java) }
