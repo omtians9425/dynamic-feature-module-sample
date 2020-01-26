@@ -54,19 +54,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadAndLaunchModule(name: String) {
-        updateProgressMessage("Loading module $name")
-        if (manager.installedModules.contains(name)) {
-            updateProgressMessage("Already installed.")
-            onSuccessfulLoad(name, launch = true)
-            return
+    private val installListener = SplitInstallStateUpdatedListener { state ->
+        val multiInstall = state.moduleNames().size > 1
+        val names = state.moduleNames().joinToString(" - " )
+        when (state.status()) {
+            SplitInstallSessionStatus.DOWNLOADING -> {
+                displayLoadingState(state, "Downloading $names")
+            }
+            SplitInstallSessionStatus.REQUIRES_USER_CONFIRMATION -> {
+                startIntentSender(state.resolutionIntent()?.intentSender, null, 0,0,0)
+            }
+            SplitInstallSessionStatus.INSTALLED -> {
+                onSuccessfulLoad(names, launch = !multiInstall)
+            }
+            SplitInstallSessionStatus.INSTALLING -> displayLoadingState(state, "Installing $names")
+            SplitInstallSessionStatus.FAILED -> {
+                toastAndLog("Error: ${state.errorCode()} for module ${state.moduleNames()}")
+            }
         }
-
-        val request = SplitInstallRequest.newBuilder()
-                .addModule(name)
-                .build()
-        manager.startInstall(request)
-        updateProgressMessage("Starting install for $name")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,6 +89,39 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         manager.unregisterListener(installListener)
         super.onPause()
+    }
+
+    private fun loadAndLaunchModule(name: String) {
+        updateProgressMessage("Loading module $name")
+        if (manager.installedModules.contains(name)) {
+            updateProgressMessage("Already installed.")
+            onSuccessfulLoad(name, launch = true)
+            return
+        }
+
+        val request = SplitInstallRequest.newBuilder()
+                .addModule(name)
+                .build()
+        manager.startInstall(request)
+        updateProgressMessage("Starting install for $name")
+    }
+
+    private fun installAllFeaturesNow() {
+        val moduleNames = listOf(moduleAssets, moduleJava, moduleKotlin, moduleNative)
+        val requestBuilder = SplitInstallRequest.newBuilder()
+        moduleNames.forEach { name ->
+            if (!manager.installedModules.contains(name)) {
+                requestBuilder.addModule(name)
+            }
+        }
+        val request = requestBuilder.build()
+        manager.startInstall(request)
+                .addOnSuccessListener {
+                    toastAndLog("Loading ${request.moduleNames}")
+                }
+                .addOnFailureListener {
+                    toastAndLog("Failed loading ${request.moduleNames}")
+                }
     }
 
     private val moduleAssets by lazy { getString(R.string.module_assets) }
@@ -189,26 +227,6 @@ class MainActivity : AppCompatActivity() {
     private fun displayButtons() {
         progress.visibility = View.GONE
         buttons.visibility = View.VISIBLE
-    }
-
-    private val installListener = SplitInstallStateUpdatedListener { state ->
-        val multiInstall = state.moduleNames().size > 1
-        val names = state.moduleNames().joinToString(" - " )
-        when (state.status()) {
-            SplitInstallSessionStatus.DOWNLOADING -> {
-                displayLoadingState(state, "Downloading $names")
-            }
-            SplitInstallSessionStatus.REQUIRES_USER_CONFIRMATION -> {
-                startIntentSender(state.resolutionIntent()?.intentSender, null, 0,0,0)
-            }
-            SplitInstallSessionStatus.INSTALLED -> {
-                onSuccessfulLoad(names, launch = !multiInstall)
-            }
-            SplitInstallSessionStatus.INSTALLING -> displayLoadingState(state, "Installing $names")
-            SplitInstallSessionStatus.FAILED -> {
-                toastAndLog("Error: ${state.errorCode()} for module ${state.moduleNames()}")
-            }
-        }
     }
 
     private fun displayLoadingState(state: SplitInstallSessionState, message: String) {
